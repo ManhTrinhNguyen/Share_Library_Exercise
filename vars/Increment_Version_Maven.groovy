@@ -1,7 +1,7 @@
 def call(String major, String minor, String incremental) {
     echo 'Increment App Version ...'
     sh "mvn build-helper:parse-version versions:set \
-        -DnewVersion=\\${major}.\\${minor}.\\${incremental} \
+        -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.nextIncrementalVersion} \
          versions:commit"
 
     def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
