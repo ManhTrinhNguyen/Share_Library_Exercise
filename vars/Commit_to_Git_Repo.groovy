@@ -1,6 +1,6 @@
 #!/user/bin/env groovy
 
-def call (){
+def call (String BRANCH_NAME){
     withCredentials([
             usernamePassword(credentialsId: 'Github_Credential', usernameVariable: 'USER', passwordVariable: 'PWD')
     ]) {
@@ -10,6 +10,6 @@ def call (){
         sh "git remote set-url origin https://${USER}:${PWD}@github.com/ManhTrinhNguyen/Jenkin-Exercise-Java-Maven.git"
         sh 'git add .'
         sh 'git commit -m "ci: version bump"'
-        sh "git push origin HEAD:Use_Share_Library"
+        sh "git push origin HEAD:${BRANCH_NAME}"
     }
 }
