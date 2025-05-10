@@ -2,5 +2,5 @@
 
 def call () {
     echo "build Image"
-    sh "docker build -t ${DOCKER_REPO}:${IMAGE_NAME} ."
+    sh "docker build -t ${ECR_REPO}:${IMAGE_NAME} ."
 }
