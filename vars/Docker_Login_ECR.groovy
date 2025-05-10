@@ -5,4 +5,5 @@ def call() {
     sh "echo ${PWD} | docker login --username ${USER} --password-stdin ${ECR_URL}"
 
     echo "Login successfully"
+  }
 }
