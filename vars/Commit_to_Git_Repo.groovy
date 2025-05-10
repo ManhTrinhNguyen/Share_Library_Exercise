@@ -1,6 +1,6 @@
 #!/user/bin/env groovy
 
-def call (String BRANCH_NAME){
+def call (){
     withCredentials([
         usernamePassword(credentialsId: 'Github_Credential', usernameVariable: 'USER', passwordVariable: 'PWD')
     ]){
